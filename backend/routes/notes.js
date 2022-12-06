@@ -2,6 +2,6 @@ const express = require('express')
 const router = express.Router();
 
 router.get('/', (req, res)=>{
-    res.json([])
+    res.json("this is notes section")
 })
-module.exports = router
+module.exports = router;
