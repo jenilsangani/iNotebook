@@ -22,7 +22,15 @@ router.post(
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-    }).then((user) => res.json(user));
+    })
+      .then((user) => res.json(user))
+      .catch((err) => {
+        console.log(err);
+        res.json({
+          error: "Please enter a unique value for email",
+          message: err.message,
+        });
+      });
   }
 );
 module.exports = router;
