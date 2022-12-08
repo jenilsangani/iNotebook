@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 //Create a User using: POST "/api/auth/", Dosn't require Auth
-router.get('/', (req, res)=>{
+router.post('/', (req, res)=>{
     console.log(req.body);
     req.body.date = new Date();
     const user = User(req.body);
