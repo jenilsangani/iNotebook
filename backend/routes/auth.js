@@ -6,8 +6,9 @@ router.get('/', (req, res)=>{
         name:'jenil sangani',
         age:22 ,
         email:'jenilsangani2000@gmail.com',
-        birth_Date:'27 April 2000'
+        birth_Date:'27 April 2000',
+        sex:'Male'
     }
     res.json(obj)
 })
-module.exports = router
+module.exports = router;
