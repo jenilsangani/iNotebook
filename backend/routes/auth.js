@@ -15,7 +15,6 @@ router.post(
   ],
 
   // If there are errors, return bad request and the errors
-
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -35,16 +34,11 @@ router.post(
         email: req.body.email,
         password: req.body.password,
       });
-      // .then((user) => res.json(user))
-      // .catch((err) => {
-      //   console.log(err);
-      //   res.json({
-      //     error: "Please enter a unique value for email",
-      //     message: err.message,
-      //   });
-      // });
       res.json(user);
-    } catch (error) {}
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send("Some Error occured");
+    }
     // res.json({ Success: "Create a user successfully..." });
   }
 );
