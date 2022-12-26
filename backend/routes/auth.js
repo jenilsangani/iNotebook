@@ -41,7 +41,7 @@ router.post(
       console.error(error.message);
       res.status(500).send("Some Error occured");
     }
-    // res.json({ Success: "Create a user successfully..." });
+    // res.json({ Success: "Create a user successfully..."});
   }
 );
 module.exports = router;
